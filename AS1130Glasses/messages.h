@@ -1,8 +1,8 @@
 // Scrolling messages
 
-char string0[] PROGMEM = "macetech.com  ";
-char string1[] PROGMEM = "Your message here...  ";
-char string2[] PROGMEM = "Hello World!  ";
+char string0[] PROGMEM = "....FUZZYLAND....";
+char string1[] PROGMEM = "WUBWUBBWUBWUB";
+char string2[] PROGMEM = "I came for the shots, hugs, and highfives!";
 //char string3[] PROGMEM = "  ";
 
 const char * stringArray[] PROGMEM = {

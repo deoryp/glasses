@@ -31,6 +31,7 @@ boolean patternInit = false;
 #include "AS1130functions.h"   // Generic AS1130 functions
 #include "glassesfunctions.h"  // Glasses-specifc functions
 #include "glassespatterns.h"   // Graphical patterns
+#include "scottpatterns.h"   // Graphical patterns
 
 
 // Begin program
@@ -63,13 +64,14 @@ byte charShow = 0;
 // Incomplete
 void loop() 
 {
-   
+  /* 
   if (((millis() - autoTimer > 15000) && autoCycle == true) || onButtonPressed(0)) {
     currentPattern++;
     if (currentPattern > 12) currentPattern = 0;
     autoTimer = millis();
     patternInit = false;
   }
+  */
   
   if (onButtonPressed(1)) cycleBrightness();
 
@@ -91,10 +93,14 @@ void loop()
     lastHeld = false;
   }
 
+currentPattern = 0;
+
   switch(currentPattern) {
 
   case 0:
-    beatingHearts();
+//    beatingHearts();
+//    scott();  
+    bounce();
     break;
     
   case 1:
@@ -144,7 +150,10 @@ void loop()
   case 12:
     rider();
     break;
- 
+    
+   case 13: 
+     beatingHearts();
+     break;
   }
 
   /*
