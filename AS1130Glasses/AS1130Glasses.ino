@@ -64,14 +64,13 @@ byte charShow = 0;
 // Incomplete
 void loop() 
 {
-  /* 
+  
   if (((millis() - autoTimer > 15000) && autoCycle == true) || onButtonPressed(0)) {
     currentPattern++;
-    if (currentPattern > 12) currentPattern = 0;
+    if (currentPattern > 15) currentPattern = 0;
     autoTimer = millis();
     patternInit = false;
   }
-  */
   
   if (onButtonPressed(1)) cycleBrightness();
 
@@ -93,70 +92,75 @@ void loop()
     lastHeld = false;
   }
 
-currentPattern = 0;
+//currentPattern = 2;
 
   switch(currentPattern) {
 
   case 0:
-//    beatingHearts();
-//    scott();  
     bounce();
     break;
     
   case 1:
+    pong();
+    break;
+    
+  case 2: 
+    boxBreak();
+    break;
+    
+  case 3:
     scrollMessage(0, SCROLL1X);
     break;
 
-  case 2:
+  case 4:
     fire();
     break;
    
-  case 3:
+  case 5:
     scrollMessage(1, SCROLL2X);
     break;
   
-  case 4:
+  case 6:
     starField();
     break;
     
-  case 5:
+  case 7:
     sines();
     break;
     
-  case 6:
+  case 8:
     slantBars();
     break;
     
-  case 7:
+  case 9:
     sideRain(0);
     break;
   
-  case 8:
+  case 10:
     sparkles();
     break;
     
-  case 9:
+  case 11:
     scrollMessage(2, SCROLL1X);
     break;
 
-  case 10:
+  case 12:
     rain();
     break;
 
-  case 11:
+  case 13:
     Plasma();
     break;
   
-  case 12:
+  case 14:
     rider();
     break;
     
-   case 13: 
-     beatingHearts();
-     break;
+  case 15: 
+    beatingHearts();
+    break;
   }
 
-  /*
   readBrightness();
   brightact++;
   if (brightact > 10) {
@@ -170,7 +174,6 @@ currentPattern = 0;
     setBrightness(glassesLeft, autoBright);
     
   }
-  */
 
 
   delay(1);
